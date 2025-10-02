@@ -23,6 +23,11 @@
   src: url('fonts/Pinar-Regular.woff2') format('woff2');
 }
 
+@font-face {
+  font-family: 'MyFont-balck';
+  src: url('fonts/Pinar-Black.woff2') format('woff2');
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -112,14 +117,14 @@ body{
 }
 
 
-.home-style {
+.home-style1 {
   display: flex;
   justify-content: center;
   margin-top: 30px;
 }
 
-.home-style button {
-  bottom: 12rem;
+.home-style1 button {
+  bottom: 15rem;
   position: relative;
   padding: 8px 30px;
   border: none;
@@ -132,7 +137,7 @@ body{
 }
 
 /* لایهٔ border گرادیانتی */
-.home-style button::before {
+.home-style1 button::before {
   content: '';
   position: absolute;
   inset: -1.5px;
@@ -148,7 +153,7 @@ body{
 }
 
 /* نقطهٔ آبی در ابتدای متن */
-.home-style .dot {
+.home-style1 .dot {
   display: inline-block;
   width: 10px;
   height: 10px;
@@ -159,8 +164,76 @@ body{
   margin-bottom: 3%;
 }
 
-.home-style a {
+.home-style1 a {
   text-decoration: none;
   color: inherit;
   font-family: 'MyFont-light', sans-serif;
+}
+
+.home-style2 {
+  display: flex;
+  justify-content: center;
+}
+
+.home-style2 h1 {
+  color: white;
+  font-size: 75px;
+  text-align: center;
+  font-family: 'MyFont-balck', sans-serif;
+  line-height: 1.5;
+  margin-top: -10%;
+  background: linear-gradient(to right, #0009FF, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent; 
+}
+
+.home-style3 {
+  display: flex;
+  justify-content: center;
+}
+
+.home-style3 .p-style{
+  color: white;
+  font-family: 'MyFont-light', sans-serif;
+  margin-top: 10px;
+}
+
+.home-style4 {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+
+.icon-style-2{
+  justify-self: end;
+}
+
+.circle-2 {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(0, 0, 255, 1);
+  box-shadow: 0 0 80px 30px rgba(0, 0, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  filter: blur(200px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.icon-style-2 img{
+  width: 300px;
+  margin-top: -27rem;
+  animation: float 1.75s ease-in-out infinite;
+  
+}    
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
