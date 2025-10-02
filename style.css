@@ -1,3 +1,28 @@
+@font-face {
+  font-family: 'MyFont-light';
+  src: url('fonts/Pinar-Light.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'MyFont-bold';
+  src: url('fonts/Pinar-bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'MyFont-medium';
+  src: url('fonts/Pinar-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'MyFont-semiBold';
+  src: url('fonts/Pinar-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'MyFont-Regular';
+  src: url('fonts/Pinar-Regular.woff2') format('woff2');
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -6,6 +31,7 @@
 
 body{
     background-color: #1E1E1E;
+    font-family: 'MyFont',sans-serif;
 }
 
 
@@ -86,3 +112,55 @@ body{
 }
 
 
+.home-style {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.home-style button {
+  bottom: 12rem;
+  position: relative;
+  padding: 8px 30px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  color: white;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+/* لایهٔ border گرادیانتی */
+.home-style button::before {
+  content: '';
+  position: absolute;
+  inset: -1.5px;
+  border-radius: 50px;
+  background: linear-gradient(to right, #0009FF, white, #0009FF);
+  padding: 2.75px;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+/* نقطهٔ آبی در ابتدای متن */
+.home-style .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #0009FF;
+  border-radius: 50%;
+  margin-left: 10px; /* فاصله از متن */
+  vertical-align: middle;
+  margin-bottom: 3%;
+}
+
+.home-style a {
+  text-decoration: none;
+  color: inherit;
+  font-family: 'MyFont-light', sans-serif;
+}
