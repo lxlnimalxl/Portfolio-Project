@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #1E1E1E;
+}
+
+
+
+.nav-bar {
+  position: relative;
+  margin-top: 20px;
+  width: 28%;
+  height: 52px;
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+
+
+  background: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+
+  border: none;
+}
+
+.nav-bar::before {
+  content: '';
+  position: absolute;
+  inset: -1.5px; /* معادل top/left/right/bottom: -2px */
+  border-radius: 50px;
+  background: linear-gradient(to right, #0009FF, white, #0009FF);
+  padding: 1.5px; /* ضخامت border */
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+.nav-list{
+    list-style: none;
+    display: flex;
+    gap: 45px;
+    margin-right: 20px;
+}
+
+.nav-list li a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.3s;
+}
+
+.circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(0, 0, 255, 1);
+  box-shadow: 0 0 80px 30px rgba(0, 0, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  filter: blur(200px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.icon-style img{
+  margin-top: -19%;
+  animation: float 1.75s ease-in-out infinite;
+}    
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
