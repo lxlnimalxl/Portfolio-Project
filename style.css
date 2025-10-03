@@ -105,14 +105,14 @@ body{
 
 .icon-style img{
   margin-top: -19%;
-  animation: float 1.75s ease-in-out infinite;
+  animation: float 2s ease-in-out infinite;
 }    
 @keyframes float {
   0%, 100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-7px);
   }
 }
 
@@ -226,7 +226,7 @@ body{
 .icon-style-2 img{
   width: 300px;
   margin-top: -27rem;
-  animation: float 1.75s ease-in-out infinite;
+  animation: float 2s ease-in-out infinite;
   
 }    
 @keyframes float {
@@ -234,6 +234,47 @@ body{
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
+  }
+}
+
+
+.home-style5 {
+  display: flex;
+  justify-content: center;
+  margin-top: -20%;
+}
+
+.mini-circle{
+  width: 74px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(47, 47, 47, 0.45);
+}
+
+.buttom-style {
+  background-color: #2F2F2F;
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  animation: bounce 2s infinite;
+  margin-top: 27%;
+  border: none;
+  cursor: pointer;
+}
+
+.buttom-style i{
+  color: white;
+  font-size: 30px;
+  position: relative;
+  
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
   }
 }
