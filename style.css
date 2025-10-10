@@ -1,31 +1,39 @@
 @font-face {
   font-family: 'MyFont-light';
   src: url('fonts/Pinar-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
 }
 
 @font-face {
   font-family: 'MyFont-bold';
-  src: url('fonts/Pinar-bold.woff2') format('woff2');
+  src: url('fonts/Pinar-Bold.woff2') format('woff2');
+  font-weight: 700;
 }
 
 @font-face {
   font-family: 'MyFont-medium';
   src: url('fonts/Pinar-Medium.woff2') format('woff2');
+  font-weight: 500;
 }
 
 @font-face {
   font-family: 'MyFont-semiBold';
   src: url('fonts/Pinar-SemiBold.woff2') format('woff2');
+  font-weight: 600;
 }
 
 @font-face {
   font-family: 'MyFont-Regular';
   src: url('fonts/Pinar-Regular.woff2') format('woff2');
+  font-weight: 400;
 }
 
 @font-face {
-  font-family: 'MyFont-balck';
+  /* fixed spelling: black */
+  font-family: 'MyFont-black';
   src: url('fonts/Pinar-Black.woff2') format('woff2');
+  font-weight: 900;
 }
 
 *{
@@ -35,8 +43,9 @@
 }
 
 body{
-    background-color: #1E1E1E;
-    font-family: 'MyFont',sans-serif;
+  background-color: #1E1E1E;
+  /* use the Regular font that was defined above */
+  font-family: 'MyFont-Regular', sans-serif;
 }
 
 
@@ -69,6 +78,9 @@ body{
   background: linear-gradient(to right, #0009FF, white, #0009FF);
   padding: 1.5px; /* ضخامت border */
   -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
@@ -106,13 +118,15 @@ body{
 .icon-style img{
   margin-top: -19%;
   animation: float 2s ease-in-out infinite;
-}    
+}
+
 @keyframes float {
   0%, 100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-7px);
+    /* unified float amount */
+    transform: translateY(-8px);
   }
 }
 
@@ -145,6 +159,9 @@ body{
   background: linear-gradient(to right, #0009FF, white, #0009FF);
   padding: 2.75px;
   -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
@@ -227,15 +244,6 @@ body{
   width: 300px;
   margin-top: -27rem;
   animation: float 2s ease-in-out infinite;
-  
-}    
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
 }
 
 
@@ -419,7 +427,6 @@ body{
   width: 60%;
   border-radius: 20px;
   z-index: +1;
-  margin-top: -4%;
   margin-right: 3%;
   box-shadow: 0 0px 200px rgba(34, 0, 255, 1);
 }
@@ -459,7 +466,96 @@ body{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  color: transparent; 
-  margin-top: 10%;
+  color: transparent;
   margin-bottom: 2% ;
+}
+
+
+.nav-bar-2{
+  position: relative;
+  margin-top:5%;
+  /* make navbar flexible so items don't overflow on smaller screens */
+  width: 830px;
+  max-width: 900px;
+  height: 70px;
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 32px;
+
+
+  background: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+
+  border: none;
+}
+
+
+.nav-bar-2::before {
+  content: '';
+  position: absolute;
+  inset: -1.5px; /* معادل top/left/right/bottom: -2px */
+  border-radius: 32px;
+  background: linear-gradient(to right, #0009FF, white, #0009FF);
+  padding: 1.5px; /* ضخامت border */
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+.nav-list-2{
+    list-style: none;
+  display: flex;
+  gap: 50px; /* smaller gap so items fit better */
+  margin: 0;
+  padding: 0 18px; /* horizontal padding inside the nav */
+  align-items: center;
+  white-space: nowrap; /* prevent items from wrapping to next line */
+}
+
+.nav-list-2 li a{
+  text-decoration: none;
+  color: white;
+  font-size: 20px; /* slightly smaller so items fit */
+  font-family: 'MyFont-semiBold', sans-serif;
+  transition: 0.2s ease;
+  display: inline-block;
+  padding: 8px 12px; /* makes click targets larger and evens spacing */
+  border-radius: 8px;
+  box-sizing: border-box;
+  line-height: 1;
+}
+
+
+.buttom-style-list{
+  /* larger pill-style list button */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px; /* taller */
+  padding: 0 20px; /* more room for text */
+  min-width: 110px; /* wider minimum */
+  width: 200px; /* make the button elongated */
+  max-width: 100%; /* don't overflow container */
+  background: linear-gradient(90deg, #140099 0%, #0022ff 100%);
+  color: #ffffff;
+  font-family: 'MyFont-semiBold', sans-serif;
+  font-size: 16px; /* slightly larger text */
+  border-radius: 25px; /* requested: 50px */
+  border: none;
+  cursor: pointer;
+  transition: none; /* animations disabled as requested */
+  text-decoration: none; /* if used on anchors */
+  text-align: center; /* ensure inline text is centered */
+  line-height: 48px; /* match height to vertically center single-line text */
+  white-space: nowrap; /* keep text on one line */
 }
